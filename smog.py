@@ -33,7 +33,7 @@ def insert_live(ozone,no2,co2,pm25,pm10, temp,wind_d,wind_s,wind_g,ozone_tempera
 
 
     try:
-        mydb = mysql.connector.connect(host="79.189.200.10",port="3400",user="meteo_zam",passwd="2&X(jX]l@R$0=]4",database="meteo_zam")
+        mydb = mysql.connector.connect(host="X",port="X",user="meteo_zam",passwd="X",database="meteo_zam")
         mycursor=mydb.cursor()
         #print (database_live)
         sql = "INSERT INTO measure_live (ids,ozone,no2,co2,pm2_5, pm10,temperature,wind_direction,wind_speed,wind_gust,ozone_temperature,ozone_humidity,no2_temperature,no2_humidity) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
@@ -57,7 +57,7 @@ def insert_live(ozone,no2,co2,pm25,pm10, temp,wind_d,wind_s,wind_g,ozone_tempera
 def update_technical(error__vent,error_ozone_sensor,error_no2_sensor,heater,reserve):
 
     try:
-        mydb = mysql.connector.connect(host="79.189.200.10",port="3400",user="meteo_zam",passwd="2&X(jX]l@R$0=]4",database="meteo_zam")
+        mydb = mysql.connector.connect(host="X",port="X",user="meteo_zam",passwd="X",database="meteo_zam")
         mycursor=mydb.cursor()
         #print (database_live)
         sql = "UPDATE errors SET vent = %s,ozone=%s,no2=%s,heater=%s,reserve=%s  WHERE ids = %s"
@@ -77,7 +77,7 @@ def update_technical(error__vent,error_ozone_sensor,error_no2_sensor,heater,rese
 def delete_old():
 
     try:
-        mydb = mysql.connector.connect(host="79.189.200.10",port="3400",user="meteo_zam",passwd="2&X(jX]l@R$0=]4",database="meteo_zam")
+        mydb = mysql.connector.connect(host="X",port="X",user="meteo_zam",passwd="X",database="meteo_zam")
         mycursor=mydb.cursor()
         sql = "DELETE FROM measure_live WHERE ids = 3 AND measure_date < DATE_SUB(NOW(),INTERVAL 2 hour)"
         val = (ids)
